@@ -5,8 +5,13 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 public class NavPage extends BasePage{
+
+    @FindBy(css = "li[class='nav-item active'] a[class='nav-link']")
+    WebElement Home;
     @FindBy(xpath = "//a[text()='Cart']")
     WebElement cart;
+
+
 
 
 
@@ -16,6 +21,9 @@ public class NavPage extends BasePage{
     }
     public void ClickCart(){
         cart.click();
+    }
+    public void ClickHome(){
+        Home.click();
     }
 
 }

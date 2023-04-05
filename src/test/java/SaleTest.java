@@ -37,6 +37,11 @@ public class SaleTest extends BaseTest {
         infoProduct.ClickAddToCart();
         wait.until(ExpectedConditions.alertIsPresent());
         driver.switchTo().alert().accept();
+        navPage.ClickHome();
+        productPage.ClickOnNexus();
+        infoProduct.ClickAddToCart();
+        wait.until(ExpectedConditions.alertIsPresent());
+        driver.switchTo().alert().accept();
         navPage.ClickCart();
         cartPage.ClickOnPlaceOrder();
         cartPage.Name.sendKeys("dejan");
@@ -47,7 +52,7 @@ public class SaleTest extends BaseTest {
         cartPage.Year.sendKeys("2023");
         cartPage.PurchaseBtn.click();
 
-        Assert.assertEquals(cartPage.InfoMessage(),"Thank yoy for your purchase!");
+        Assert.assertEquals(cartPage.InfoMessage(),"Thank you for your purchase!");
     }
     @AfterMethod
     public void After(){
