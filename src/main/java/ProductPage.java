@@ -10,6 +10,11 @@ public class ProductPage extends BasePage {
     @FindBy(linkText = "Nexus 6")
     WebElement Nexus6;
 
+    @FindBy(linkText = "Sony vaio i5")
+    WebElement SonyVaioi5;
+    @FindBy(linkText = "ASUS Full HD")
+    WebElement Asus;
+
     public ProductPage(ChromeDriver driver){
         this.driver=driver;
         PageFactory.initElements(driver,this);
@@ -19,6 +24,12 @@ public class ProductPage extends BasePage {
     }
     public void ClickOnNexus(){
         Nexus6.click();
+    }
+    public void ClickOnSony(){
+        SonyVaioi5.click();
+    }
+    public void ClickAsus(){
+        Asus.click();
     }
 
 }
