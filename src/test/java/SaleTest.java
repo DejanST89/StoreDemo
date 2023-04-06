@@ -42,6 +42,18 @@ public class SaleTest extends BaseTest {
         infoProduct.ClickAddToCart();
         wait.until(ExpectedConditions.alertIsPresent());
         driver.switchTo().alert().accept();
+        navPage.ClickHome();
+        navPage.ClickLaptops();
+        productPage.ClickOnSony();
+        infoProduct.ClickAddToCart();
+        wait.until(ExpectedConditions.alertIsPresent());
+        driver.switchTo().alert().accept();
+        navPage.ClickHome();
+        navPage.ClickMonitors();
+        productPage.ClickAsus();
+        infoProduct.ClickAddToCart();
+        wait.until(ExpectedConditions.alertIsPresent());
+        driver.switchTo().alert().accept();
         navPage.ClickCart();
         cartPage.ClickOnPlaceOrder();
         cartPage.Name.sendKeys("dejan");

@@ -11,6 +11,12 @@ public class NavPage extends BasePage{
     @FindBy(xpath = "//a[text()='Cart']")
     WebElement cart;
 
+    @FindBy(css = "body > div:nth-child(6) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > a:nth-child(3)")
+    WebElement Laptops;
+
+    @FindBy(linkText = "Monitors")
+    WebElement Monitors;
+
 
 
 
@@ -24,6 +30,12 @@ public class NavPage extends BasePage{
     }
     public void ClickHome(){
         Home.click();
+    }
+    public void ClickLaptops(){
+        Laptops.click();
+    }
+    public void ClickMonitors(){
+        Monitors.click();
     }
 
 }
