@@ -11,7 +11,7 @@ public class NavPage extends BasePage{
     @FindBy(xpath = "//a[text()='Cart']")
     WebElement cart;
 
-    @FindBy(css = "body > div:nth-child(6) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > a:nth-child(3)")
+    @FindBy(linkText = "Laptops")
     WebElement Laptops;
 
     @FindBy(linkText = "Monitors")

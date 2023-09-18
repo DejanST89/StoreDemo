@@ -14,6 +14,8 @@ public class ProductPage extends BasePage {
     WebElement SonyVaioi5;
     @FindBy(linkText = "ASUS Full HD")
     WebElement Asus;
+    @FindBy(linkText = "Apple monitor 24")
+    WebElement Apple;
 
     public ProductPage(ChromeDriver driver){
         this.driver=driver;
@@ -30,6 +32,9 @@ public class ProductPage extends BasePage {
     }
     public void ClickAsus(){
         Asus.click();
+    }
+    public void ClickApple(){
+        Apple.click();
     }
 
 }
