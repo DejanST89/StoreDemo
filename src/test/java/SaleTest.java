@@ -18,6 +18,8 @@ public class SaleTest extends BaseTest {
     InfoProduct infoProduct;
     CartPage cartPage;
 
+    ContactPage contactPage;
+
     NavPage navPage;
 
     @BeforeMethod
@@ -27,6 +29,8 @@ public class SaleTest extends BaseTest {
         infoProduct = new InfoProduct(driver);
         navPage= new NavPage(driver);
         cartPage=new CartPage(driver);
+        contactPage= new ContactPage(driver);
+
 
         wait= new WebDriverWait(driver, Duration.ofSeconds(20));
     }
@@ -54,6 +58,12 @@ public class SaleTest extends BaseTest {
         infoProduct.ClickAddToCart();
         wait.until(ExpectedConditions.alertIsPresent());
         driver.switchTo().alert().accept();
+        navPage.ClickHome();
+        navPage.ClickMonitors();
+        productPage.ClickApple();
+        infoProduct.ClickAddToCart();
+        wait.until(ExpectedConditions.alertIsPresent());
+        driver.switchTo().alert().accept();
         navPage.ClickCart();
         cartPage.ClickOnPlaceOrder();
         cartPage.Name.sendKeys("dejan");
@@ -65,6 +75,18 @@ public class SaleTest extends BaseTest {
         cartPage.PurchaseBtn.click();
 
         Assert.assertEquals(cartPage.InfoMessage(),"Thank you for your purchase!");
+    }
+
+    @Test
+    public void ContactPageTest(){
+        contactPage.ContactPageClick();
+        contactPage.Email.sendKeys("Dejan.stancevic@hotmail.com");
+        contactPage.Name.sendKeys("dejan");
+        contactPage.Message.sendKeys("The page is not working proprerly");
+        contactPage.SendMassageButton();
+        driver.switchTo().alert().accept();
+
+
     }
     @AfterMethod
     public void After(){
